@@ -13,4 +13,4 @@ router.route('/login').post(authAdmin);
 router.route('/customers').get(adminProtect, getCustomers);
 router.route('/customers/:id').get(adminProtect, getCustomerById);
 
-module.exports = router;
+export default router;
