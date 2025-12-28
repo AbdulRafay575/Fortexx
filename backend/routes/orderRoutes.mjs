@@ -8,8 +8,8 @@ import {
   getOrders,
   handlePaymentCallback,
   getOrderStatus
-} from '../controllers/orderController.js';
-import { protect, adminProtect } from '../middleware/auth.js';
+} from '../controllers/orderController.mjs';
+import { protect, adminProtect } from '../middleware/auth.mjs';
 
 const router = express.Router();
 

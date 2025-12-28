@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
-const Admin = require('./models/Admin');
+const Admin = require('./models/Admin.mjs');
 
 dotenv.config();
 

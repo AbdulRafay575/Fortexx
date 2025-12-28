@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 const crypto = require('crypto');
-const Order = require('../models/Order');
-const Cart = require('../models/Cart');
-const User = require('../models/User');
+const Order = require('../models/Order.mjs');
+const Cart = require('../models/Cart.mjs');
+const User = require('../models/User.mjs');
 const asyncHandler = require('express-async-handler');
-const { sendOrderConfirmationEmail } = require('../utils/emailService');
+const { sendOrderConfirmationEmail } = require('../utils/emailService.mjs');
 
 // @desc    Create new order and prepare bank payment
 // @route   POST /api/orders

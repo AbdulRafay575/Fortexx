@@ -1,7 +1,7 @@
-const Admin = require('../models/Admin');
-const User = require('../models/User');
+const Admin = require('../models/Admin.mjs');
+const User = require('../models/User.mjs');
 const asyncHandler = require('express-async-handler');
-const { generateToken } = require('../middleware/auth');
+const { generateToken } = require('../middleware/auth.mjs');
 
 // @desc    Auth admin & get token
 // @route   POST /api/admin/login

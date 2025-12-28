@@ -4,8 +4,8 @@ import {
   getCustomers,
   getCustomerById,
   registerAdmin
-} from '../controllers/adminController.js';
-import { adminProtect } from '../middleware/auth.js';
+} from '../controllers/adminController.mjs';
+import { adminProtect } from '../middleware/auth.mjs';
 
 const router = express.Router();
 

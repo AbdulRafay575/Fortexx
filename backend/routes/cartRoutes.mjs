@@ -4,9 +4,9 @@ import {
   addToCart,
   updateCartItem,
   removeFromCart
-} from '../controllers/cartController.js';
-import { protect } from '../middleware/auth.js';
-import { designUpload } from '../config/cloudinary.js';
+} from '../controllers/cartController.mjs';
+import { protect } from '../middleware/auth.mjs';
+import { designUpload } from '../config/cloudinary.mjs';
 
 const router = express.Router();
 

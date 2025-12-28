@@ -1,7 +1,7 @@
-const Cart = require('../models/Cart');
-const Product = require('../models/Product');
+const Cart = require('../models/Cart.mjs');
+const Product = require('../models/Product.mjs');
 const asyncHandler = require('express-async-handler');
-const { deleteFromCloudinary } = require('../config/cloudinary');
+const { deleteFromCloudinary } = require('../config/cloudinary.mjs');
 
 // @desc    Get user cart
 // @route   GET /api/cart

@@ -1,4 +1,4 @@
-import { createHashV3 } from "../utils/hashv3.js";
+import { createHashV3 } from "../utils/hashv3.mjs";
 
 export const createPayment = (req, res) => {
     const {

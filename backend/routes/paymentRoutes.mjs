@@ -1,7 +1,7 @@
 import express from "express";
-import { createPayment } from "../controllers/paymentController.js";
-import { paymentSuccess } from "../controllers/successController.js";
-import { paymentFail } from "../controllers/failController.js";
+import { createPayment } from "../controllers/paymentController.mjs";
+import { paymentSuccess } from "../controllers/successController.mjs";
+import { paymentFail } from "../controllers/failController.mjs";
 
 const router = express.Router();
 
