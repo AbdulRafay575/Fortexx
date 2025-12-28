@@ -1,7 +1,8 @@
-const Admin = require('../models/Admin.mjs');
-const User = require('../models/User.mjs');
-const asyncHandler = require('express-async-handler');
-const { generateToken } = require('../middleware/auth.mjs');
+import Admin from '../models/Admin.mjs';
+import User from '../models/User.mjs';
+import asyncHandler from 'express-async-handler';
+import { generateToken } from '../middleware/auth.mjs';
+
 
 // @desc    Auth admin & get token
 // @route   POST /api/admin/login
@@ -126,9 +127,9 @@ const getCustomerById = asyncHandler(async (req, res) => {
   }
 });
 
-module.exports = {
+export {
   authAdmin,
-  getCustomers,
-  getCustomerById,
   registerAdmin,
+  getCustomers,
+  getCustomerById
 };

@@ -1,6 +1,6 @@
-const Product = require('../models/Product');
-const asyncHandler = require('express-async-handler');
-const { deleteFromCloudinary } = require('../config/cloudinary');
+import Product from '../models/Product.mjs';
+import asyncHandler from 'express-async-handler';
+import { deleteFromCloudinary } from '../config/cloudinary.mjs';
 
 // @desc    Get all products
 // @route   GET /api/products
@@ -313,7 +313,7 @@ const deleteProduct = asyncHandler(async (req, res) => {
   }
 });
 
-module.exports = {
+export {
   getProducts,
   getProductById,
   createProduct,

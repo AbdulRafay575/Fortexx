@@ -1,6 +1,7 @@
-const cloudinary = require('cloudinary').v2;
-const { CloudinaryStorage } = require('multer-storage-cloudinary');
-const multer = require('multer');
+import { v2 as cloudinary } from 'cloudinary';
+import { CloudinaryStorage } from 'multer-storage-cloudinary';
+import multer from 'multer';
+
 
 // Configure Cloudinary
 cloudinary.config({
@@ -71,9 +72,4 @@ const deleteFromCloudinary = async (publicId) => {
   }
 };
 
-module.exports = {
-  upload: productUpload, // Default for products
-  designUpload, // For cart designs
-  deleteFromCloudinary,
-  cloudinary
-};
+export { cloudinary, productUpload as upload, designUpload };

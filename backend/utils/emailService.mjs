@@ -1,4 +1,4 @@
-const nodemailer = require('nodemailer');
+import nodemailer from 'nodemailer';
 
 // Global transporter configured for Gmail
 const transporter = nodemailer.createTransport({
@@ -11,7 +11,7 @@ const transporter = nodemailer.createTransport({
 
 const sendEmail = async (options) => {
   const mailOptions = {
-    from: 'T-Shirt Customization <no-reply@tshirtcustom.com>', // You can set display name but Gmail will show your actual email too
+    from: 'T-Shirt Customization <no-reply@tshirtcustom.com>',
     to: options.email,
     subject: options.subject,
     text: options.message || '',
@@ -19,7 +19,6 @@ const sendEmail = async (options) => {
   };
 
   const info = await transporter.sendMail(mailOptions);
-
   console.log(`✅ Email sent to ${options.email}: ${info.messageId}`);
 };
 
@@ -77,5 +76,4 @@ const sendOrderConfirmationEmail = async (user, order) => {
   });
 };
 
-
-module.exports = { sendEmail, sendOrderConfirmationEmail };
+export { sendEmail, sendOrderConfirmationEmail };

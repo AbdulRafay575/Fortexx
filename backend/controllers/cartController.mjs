@@ -1,7 +1,8 @@
-const Cart = require('../models/Cart.mjs');
-const Product = require('../models/Product.mjs');
-const asyncHandler = require('express-async-handler');
-const { deleteFromCloudinary } = require('../config/cloudinary.mjs');
+import Cart from '../models/Cart.mjs';
+import Product from '../models/Product.mjs';
+import asyncHandler from 'express-async-handler';
+import { deleteFromCloudinary } from '../config/cloudinary.mjs';
+
 
 // @desc    Get user cart
 // @route   GET /api/cart
@@ -306,7 +307,7 @@ const removeFromCart = asyncHandler(async (req, res) => {
   }
 });
 
-module.exports = {
+export {
   getCart,
   addToCart,
   updateCartItem,

@@ -1,9 +1,9 @@
-const jwt = require('jsonwebtoken');
-const asyncHandler = require('express-async-handler');
-const User = require('../models/User.mjs');
-const Admin = require('../models/Admin.mjs');
+import jwt from 'jsonwebtoken';
+import asyncHandler from 'express-async-handler';
+import User from '../models/User.mjs';
+import Admin from '../models/Admin.mjs';
 
-const protect = asyncHandler(async (req, res, next) => {
+export const protect = asyncHandler(async (req, res, next) => {
   let token;
 
   if (req.headers.authorization && req.headers.authorization.startsWith('Bearer')) {
@@ -38,7 +38,7 @@ const protect = asyncHandler(async (req, res, next) => {
   }
 });
 
-const adminProtect = asyncHandler(async (req, res, next) => {
+export const adminProtect = asyncHandler(async (req, res, next) => {
   let token;
 
   if (req.headers.authorization && req.headers.authorization.startsWith('Bearer')) {
@@ -60,10 +60,8 @@ const adminProtect = asyncHandler(async (req, res, next) => {
   }
 });
 
-const generateToken = (id) => {
+export const generateToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET, {
     expiresIn: '30d',
   });
 };
-
-module.exports = { protect, adminProtect, generateToken };

@@ -1,10 +1,11 @@
-const mongoose = require('mongoose');
-const crypto = require('crypto');
-const Order = require('../models/Order.mjs');
-const Cart = require('../models/Cart.mjs');
-const User = require('../models/User.mjs');
-const asyncHandler = require('express-async-handler');
-const { sendOrderConfirmationEmail } = require('../utils/emailService.mjs');
+import mongoose from 'mongoose';
+import crypto from 'crypto';
+import Order from '../models/Order.mjs';
+import Cart from '../models/Cart.mjs';
+import User from '../models/User.mjs';
+import asyncHandler from 'express-async-handler';
+import { sendOrderConfirmationEmail } from '../utils/emailService.mjs';
+
 
 // @desc    Create new order and prepare bank payment
 // @route   POST /api/orders
@@ -279,7 +280,7 @@ const getOrders = asyncHandler(async (req, res) => {
   });
 });
 
-module.exports = {
+export {
   createOrder,
   getOrderById,
   getMyOrders,

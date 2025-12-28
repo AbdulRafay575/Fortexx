@@ -1,6 +1,6 @@
-const User = require('../models/User');
-const asyncHandler = require('express-async-handler');
-const { generateToken } = require('../middleware/auth');
+import User from '../models/User.mjs';
+import asyncHandler from 'express-async-handler';
+import { generateToken } from '../middleware/auth.mjs';
 
 // @desc    Register a new user
 // @route   POST /api/users/register
@@ -110,9 +110,4 @@ const updateUserProfile = asyncHandler(async (req, res) => {
   }
 });
 
-module.exports = {
-  registerUser,
-  authUser,
-  getUserProfile,
-  updateUserProfile
-};
+export { registerUser, authUser, getUserProfile, updateUserProfile };
