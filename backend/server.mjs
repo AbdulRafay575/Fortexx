@@ -26,7 +26,7 @@ import productRoutes from './routes/productRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 import cartRoutes from './routes/cartRoutes.js';
 import orderRoutes from './routes/orderRoutes.js';
-import adminRoutes from './routes/adminRoutes.js';
+import adminRoutes from './routes/adminRoutes.mjs';
 
 // Body parsers
 app.use(express.json());
