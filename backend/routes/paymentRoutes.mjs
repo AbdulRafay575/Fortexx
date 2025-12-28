@@ -5,7 +5,7 @@ import { paymentFail } from "../controllers/failController.js";
 
 const router = express.Router();
 
-// Correct relative paths
+// Payment routes
 router.post("/create", createPayment);        // /api/payments/create
 router.post("/success", paymentSuccess);      // /api/payments/success
 router.post("/fail", paymentFail);            // /api/payments/fail

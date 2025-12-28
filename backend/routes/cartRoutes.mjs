@@ -1,14 +1,16 @@
-const express = require('express');
-const router = express.Router();
-const {
+import express from 'express';
+import {
   getCart,
   addToCart,
   updateCartItem,
   removeFromCart
-} = require('../controllers/cartController');
-const { protect } = require('../middleware/auth');
-const { designUpload } = require('../config/cloudinary'); // Use design upload for cart
+} from '../controllers/cartController.js';
+import { protect } from '../middleware/auth.js';
+import { designUpload } from '../config/cloudinary.js';
 
+const router = express.Router();
+
+// Cart routes
 router.route('/')
   .get(protect, getCart)
   .post(protect, designUpload.single('design'), addToCart);

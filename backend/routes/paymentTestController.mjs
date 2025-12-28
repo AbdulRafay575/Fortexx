@@ -1,9 +1,10 @@
-const express = require('express');
+import express from 'express';
+import asyncHandler from 'express-async-handler';
+import axios from 'axios';
+import crypto from 'crypto';
+import { protect } from '../middleware/auth.mjs'; // ES module import
+
 const router = express.Router();
-const asyncHandler = require('express-async-handler');
-const axios = require('axios');
-const crypto = require('crypto');
-const { protect } = require('../middleware/auth'); // Your auth middleware
 
 // Function to generate Hashv3
 function generateHash(orderId, amount, currency, storeKey) {
@@ -22,7 +23,7 @@ router.post(
 
     try {
       const orderId = `TEST-${Date.now()}`;
-      const storeKey = 'SKEY0335'; // Your Storekey
+      const storeKey = 'SKEY0335'; // Your StoreKey
       const currency = '807';
 
       // Hashv3 calculation

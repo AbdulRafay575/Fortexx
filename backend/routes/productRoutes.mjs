@@ -1,6 +1,6 @@
-const express = require('express');
-const router = express.Router();
-const {
+// backend/routes/productRoutes.mjs
+import express from 'express';
+import {
   getProducts,
   getProductById,
   createProduct,
@@ -8,9 +8,11 @@ const {
   deleteProduct,
   deleteProductImage,
   setPrimaryImage
-} = require('../controllers/productController');
-const { protect, adminProtect } = require('../middleware/auth');
-const { upload } = require('../config/cloudinary');
+} from '../controllers/productController.mjs';
+import { protect, adminProtect } from '../middleware/auth.mjs';
+import { upload } from '../config/cloudinary.mjs';
+
+const router = express.Router();
 
 // Public Routes
 router.route('/')
@@ -21,7 +23,7 @@ router.route('/:id')
 
 // Admin Routes with multiple image upload
 router.route('/')
-  .post(adminProtect, upload.array('images', 10), createProduct); // Increased to 10 images max
+  .post(adminProtect, upload.array('images', 10), createProduct);
 
 router.route('/:id')
   .put(adminProtect, upload.array('images', 10), updateProduct)
