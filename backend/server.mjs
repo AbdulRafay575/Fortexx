@@ -5,7 +5,7 @@ import dotenv from 'dotenv';
 import { fileURLToPath } from 'url';
 
 import connectDB from './config/db.mjs';
-import { notFound, errorHandler } from './middleware/errorHandler.js';
+import { notFound, errorHandler } from './middleware/errorHandler.mjs';
 
 // Fix __dirname for ES Modules
 const __filename = fileURLToPath(import.meta.url);
