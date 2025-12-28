@@ -27,4 +27,4 @@ router.route('/:orderId/status').get(protect, getOrderStatus);
 router.route('/admin/orders').get(adminProtect, getOrders);
 router.route('/admin/orders/:id').put(adminProtect, updateOrderStatus);
 
-module.exports = router;
+export default router;

@@ -34,4 +34,4 @@ router.route('/:id/images/:imageId')
 router.route('/:id/images/:imageId/primary')
   .patch(adminProtect, setPrimaryImage);
 
-module.exports = router;
+export default router;
