@@ -72,4 +72,9 @@ const deleteFromCloudinary = async (publicId) => {
   }
 };
 
-export { cloudinary, productUpload as upload, designUpload };
+export {
+  productUpload as upload, // Default for products
+  designUpload,
+  deleteFromCloudinary,
+  cloudinary
+};
