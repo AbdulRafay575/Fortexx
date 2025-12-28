@@ -21,11 +21,11 @@ const app = express();
 connectDB();
 
 // Routes (ESM syntax)
-import paymentRoutes from './routes/paymentRoutes.js';
-import productRoutes from './routes/productRoutes.js';
-import userRoutes from './routes/userRoutes.js';
-import cartRoutes from './routes/cartRoutes.js';
-import orderRoutes from './routes/orderRoutes.js';
+import paymentRoutes from './routes/paymentRoutes.mjs';
+import productRoutes from './routes/productRoutes.mjs';
+import userRoutes from './routes/userRoutes.mjs';
+import cartRoutes from './routes/cartRoutes.mjs';
+import orderRoutes from './routes/orderRoutes.mjs';
 import adminRoutes from './routes/adminRoutes.mjs';
 
 // Body parsers
