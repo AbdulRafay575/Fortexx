@@ -46,7 +46,7 @@ app.use(cors(corsOptions));
 
 // Test route
 app.get('/', (req, res) => {
-  res.send('Server is running!');
+  res.send('Server is running on port 0.0.0.0');
 });
 
 // Static files
